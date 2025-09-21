@@ -30,7 +30,7 @@ const Form = ({updateForm}) => {
         if (name === '' || email === '' || phone === '') {
             setMsg('All fields are required');
 
-            settimeout(() => {
+            setTimeout(() => {
                 setMsg('');
             }, 3000);
             return;
@@ -38,7 +38,7 @@ const Form = ({updateForm}) => {
         if (phone.length !== 10) {
             setMsg('Phone number must be 10 digits');
 
-            settimeout(() => {
+            setTimeout(() => {
                 setMsg('');
             }, 3000);
             return;
@@ -47,7 +47,7 @@ const Form = ({updateForm}) => {
         if (!email.includes('@') || !email.includes('.')) {
             setMsg('Please enter a valid email address');
 
-            settimeout(() => {
+            setTimeout(() => {
                 setMsg('');
             }, 3000);
             return;
