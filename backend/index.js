@@ -1,6 +1,8 @@
 const express = require('express')
+const cors = require('cors') 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 const sqlite3 = require('sqlite3')
 const { open } = require('sqlite')
@@ -66,5 +68,5 @@ app.delete('/contacts/:contactId/', async (req, res) => {
     WHERE
       id = ${contactId};`
   await db.run(deleteContactQuery)
-  res.send({ message: 'Contact Deleted' })
+  res.send({ message: 'Contact Deleted' }).status(204)
 })
