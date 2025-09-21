@@ -29,15 +29,27 @@ const Form = ({updateForm}) => {
         e.preventDefault();
         if (name === '' || email === '' || phone === '') {
             setMsg('All fields are required');
+
+            settimeout(() => {
+                setMsg('');
+            }, 3000);
             return;
         }
         if (phone.length !== 10) {
             setMsg('Phone number must be 10 digits');
+
+            settimeout(() => {
+                setMsg('');
+            }, 3000);
             return;
         }
 
         if (!email.includes('@') || !email.includes('.')) {
             setMsg('Please enter a valid email address');
+
+            settimeout(() => {
+                setMsg('');
+            }, 3000);
             return;
         }
         if (msg !== '') {
@@ -55,7 +67,7 @@ const Form = ({updateForm}) => {
             setMsg('');
         }, 3000);
 
-        
+
     }
 
 
